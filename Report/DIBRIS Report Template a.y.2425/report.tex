@@ -1,0 +1,138 @@
+\documentclass{article}
+
+\usepackage{dibrisunige-report}
+\usepackage{codespace}
+
+% Sub-preambles
+% https://github.com/MartinScharrer/standalone
+
+% Encodings
+\usepackage{amsmath,amssymb,gensymb,textcomp}
+
+% Better tables
+% Wide tables go to https://tex.stackexchange.com/q/332902
+\usepackage{array,multicol,multirow,siunitx,tabularx}
+
+% Better enum
+\usepackage{enumitem}
+
+% Graphics
+\usepackage{caption,float}
+
+% Allow setting >max< width of figure
+% 'export' allows adjustbox keys in \includegraphics
+\usepackage[export]{adjustbox}
+
+% For demonstration purposes, remove in production
+\usepackage{mwe}
+
+% Configurations
+\newcounter{memberrowno}
+\setcounter{memberrowno}{0}
+
+\ocoursename{Course name}
+\oreporttype{Report}
+\title{Project title}
+\oadvisor{Advisor/s}
+\reportlayout%
+
+% Custom commands
+\newcommand*\mean[1]{\bar{#1}}
+
+% Title and Metadata
+\title{[Your Project Title]}
+\author{[Your Name(s)]}
+\date{\today}
+
+\begin{document}
+
+% Cover Page
+\coverpage%
+
+\section*{Member list \& Workload}
+\begin{center}
+  \begin{tabular}{>{\stepcounter{memberrowno}\thememberrowno}llcc}
+    \toprule
+    \multicolumn{1}{c}{\textbf{No.}} & \textbf{Full name} & \textbf{Student ID} & \textbf{Percentage of work} \\
+    \midrule
+                                     & h                  & xxxxxxx             & 100\%                       \\
+                                     & h                  & xxxxxxx             & 100\%                       \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+
+\newpage
+% Table of Contents
+\tableofcontents
+\newpage
+
+
+% Abstract
+%\section{Abstract (max 500 chars)}
+%This is how you normally work with \LaTeX, but you can also split a project into smaller files for easier management.
+%\\
+%Here a few lines to describe the goal of the project, the  solution/s adopted and (in case) the difficulties faced and novelties proposed. 
+%\\
+%To import other files, you can use \mintinline{latex}{\input{}} or \mintinline{latex}{\include{}}.
+%There differences can be found at \url{https://tex.stackexchange.com/a/250}, but in short
+%
+%\[\mintinline{latex}{\include{filename}} = \mintinline{latex}{\clearpage \input{filename} \clearpage}\]
+
+% Concept Overview
+\section{Concept Overview (max 1000 chars)}
+\begin{itemize}
+    \item \textbf{Brief Description:} [A concise explanation of what your project is and what it does]
+    \item \textbf{Objectives:} [The main goals you aim to achieve with your project]
+    \item \textbf{Key Feature:} [The most distinctive or innovative aspect of your project]
+\end{itemize}
+
+% Target Audience
+\section{Target Audience (a few lines)}
+\begin{itemize}
+    \item \textbf{Primary Users:} [Describe your primary target audience, e.g., "Remote workers"]
+    \item \textbf{Secondary Users:} [Describe other potential users, if any]
+\end{itemize}
+
+% Example of Use Case
+\section{Example of Use Case (max 1000 char)}
+\textbf{Description:} [A sequence of actions performed by a user to achieve a specific goal within the application]
+
+% Technical Information
+\section{Technical Information (a short but precise list}
+\begin{itemize}
+    \item \textbf{Technologies \& Software:} [The specific technologies you'll be using, e.g., "Unreal Engine version XX.YY, ChatGPT, Convai, MetaHuman, etc."]
+    \item \textbf{Platforms:} [Specify the platforms on which the application will be available, e.g., "Oculus, iOS, Android, Web"]
+    \item \textbf{Programming Languages:} [List the programming languages you will use, e.g., "Blueprint, C++, Python, Swift, Kotlin, JavaScript"]
+    \item \textbf{Frameworks:} [Specify the frameworks you will use, e.g., "React Native, Flutter"]
+    \item \textbf{Database:} [Specify the type of database, if necessary, e.g., "MongoDB"]
+    \item \textbf{Cloud:} [Specify the cloud platform you will use, if necessary, e.g., "OneDrive, AWS, Google Cloud"]
+\end{itemize}
+
+% Development Plan
+\section{Development Plan (a few lines with indication of expected date of presentation of the demo)}
+\begin{itemize}
+    \item \textbf{Team and Roles:} [Who is on the team and what are their responsibilities]
+    \item \textbf{Timeline:} [The major milestones in your development process (concept, prototype, beta, launch)]
+\end{itemize}
+
+
+% State or Art
+\include{chapters/stateofart.tex}
+
+% other chapters for Final Report
+%\include{chapters/tools.tex}
+%\include{chapters/description.tex}
+%\include{chapters/results.tex}
+%\include{chapters/conclusions.tex}
+
+% some example of chapters
+%\include{chapters/example/bettertables.tex}
+%\include{chapters/example/betterenum.tex}
+%\include{chapters/example/codespace.tex}
+%\include{chapters/example/figwidth.tex}
+
+
+\bibliographystyle{plain}
+\bibliography{refs}
+\nocite{*}
+\end{document}
